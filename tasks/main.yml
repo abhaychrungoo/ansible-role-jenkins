@@ -17,20 +17,14 @@
 - include: setup-RedHat-Offline.yml
   when: ansible_os_family == 'RedHat'
   
+  # Update Jenkins and install configured plugins.
+- include: plugins.yml
+  
 # FLush any handlers
 - include: flush.yml
 
 # Base jenkins configuration
 - include: pre_configure.yml
-
-# FLush any handlers
-- include: flush.yml
-
-# Update Jenkins and install configured plugins.
-- include: plugins.yml
-
-# FLush any handlers
-- include: flush.yml
 
 # Any post configuration typically involving plugins
 - include: post_configure.yml

@@ -27,7 +27,7 @@ for (Object jenkinsSlave: allSlaves) {
                     "4",
                     Node.Mode.NORMAL,
                     "local, unix, slow",
-                    new SSHLauncher(slaveHost ,22,slaveUser,slavePass,"","","","",""),
+                    new SSHLauncher(slaveHost ,22,slaveUser,"${slavePass}","","","","",""),
                     new RetentionStrategy.Always(),
                     new LinkedList())
   slave.getNodeProperties().add(envPro)
