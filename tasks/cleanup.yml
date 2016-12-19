@@ -8,3 +8,4 @@
   - 30-configure_roles.groovy
   - 35-configure_users.groovy
   - 40-configure_slaves.groovy
+  - 10-configure_vault.groovy

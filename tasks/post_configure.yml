@@ -1,5 +1,12 @@
 ---
-
+- name: configure vault
+  template:
+    src: configure_vault.groovy
+    dest: "{{ jenkins_home }}/init.groovy.d/10-configure_vault.groovy"
+  register: jenkins_vault_config
+  when: jenkins_plugin_hashicorp_vault.force == true
+  notify: restart jenkins    
+  
 - name: reset authorization
   template:
     src: configure_roles.groovy
@@ -24,3 +31,4 @@
   register: jenkins_slaves_config
   when: jenkins_plugin_ssh_slaves.force == true
   notify: restart jenkins  
+

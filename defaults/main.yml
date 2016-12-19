@@ -13,8 +13,12 @@ jenkins_plugin_role_strategy:
   force: false
   journeys: []
 jenkins_plugin_ssh_slaves:
-  force: false
+  force: true
   slaves: []  
+jenkins_plugin_hashicorp_vault:
+  force: true
+  url: 'http://localhost:8200'
+  token: ''    
 jenkins_connection_delay: 5
 jenkins_connection_retries: 60
 jenkins_home: "{{ jenkins_root }}/var/lib/jenkins"

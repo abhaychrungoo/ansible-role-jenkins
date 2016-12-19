@@ -1,6 +1,10 @@
 ---
 - name: Trigger handlers immediately in case Jenkins was installed
   meta: flush_handlers
+
+- name: Allow handlers to trigger
+  command: sleep 5
+  changed_when: false
   
 - name: Wait for Jenkins to start up before proceeding.
   shell: "curl -D - --silent --max-time 5 http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/cli/"
