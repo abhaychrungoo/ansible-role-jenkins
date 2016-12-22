@@ -1,0 +1,13 @@
+---
+- group: 
+    name: "{{ jenkins_group }}"
+    state: present
+- user: 
+    name: "{{ jenkins_user }}"
+    group: "{{ jenkins_group }}"
+    home: "{{ jenkins_root }}"
+    createhome: yes
+    generate_ssh_key: yes
+    password: vault
+    
+  
