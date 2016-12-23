@@ -1,5 +1,6 @@
 ---
 jenkins_user: jenkins
+jenkins_user_password: ''
 jenkins_group: jenkins
 jenkin_root: /app/jenkins
 jenkins_nexus_url: http://mirrors.jenkins.io/war-stable/latest/jenkins.war

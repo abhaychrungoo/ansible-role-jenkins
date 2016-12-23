@@ -8,6 +8,13 @@
     home: "{{ jenkins_root }}"
     createhome: yes
     generate_ssh_key: yes
-    password: vault
+    password: "{{ jenkins_user_password }}"
     
+- name: Ensure dependencies are installed.
+  package:
+    name: 
+      - curl
+      - libselinux-python
+      - unzip
+    state: installed
   
