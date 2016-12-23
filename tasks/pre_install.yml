@@ -14,7 +14,7 @@
     home: "{{ jenkins_root }}"
     createhome: yes
     generate_ssh_key: yes
-    password: "{{ jenkins_user_password }}"
+#    password: "{{ jenkins_user_password }}"
     
 - name: Ensure dependencies are installed.
   package:

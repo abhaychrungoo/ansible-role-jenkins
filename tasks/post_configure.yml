@@ -20,7 +20,6 @@
     src: configure_users.groovy
     dest: "{{ jenkins_home }}/init.groovy.d/35-configure_users.groovy"
   register: jenkins_users_config
-  notify: restart jenkins
   when: jenkins_plugin_role_strategy.force == true
   notify: restart jenkins
   
