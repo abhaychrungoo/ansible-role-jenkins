@@ -1,4 +1,10 @@
 ---
+
+# fail if not redhat
+- fail:
+    msg: "Non RedHat installations not supported yet" 
+  when: ansible_os_family != 'RedHat'
+
 - group: 
     name: "{{ jenkins_group }}"
     state: present
